@@ -1,6 +1,6 @@
 app-id: org.b3log.siyuan
 runtime: org.freedesktop.Platform
-runtime-version: &runtime-version '23.08' 
+runtime-version: &runtime-version '23.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
 base-version: *runtime-version
@@ -36,8 +36,8 @@ modules:
       - type: archive
         dest: siyuan
         only-arches: [x86_64]
-        url: https://github.com/siyuan-note/siyuan/releases/download/v2.10.14/siyuan-2.10.14-linux.tar.gz
-        sha256: d41ba5d258996ebc7759418d88680d4c8d8e7b656d7448f5406f1494a8ae6294
+        url: https://github.com/siyuan-note/siyuan/releases/download/v2.10.15/siyuan-2.10.15-linux.tar.gz
+        sha256: 7acfb90b14dfebf0664c0d8f867b62094dbcd851690fef30f3d17d018c32f92f
         x-checker-data:
           is-main-source: true
           type: anitya
