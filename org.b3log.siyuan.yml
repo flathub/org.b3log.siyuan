@@ -36,8 +36,8 @@ modules:
       - type: archive
         dest: siyuan
         only-arches: [x86_64]
-        url: https://github.com/siyuan-note/siyuan/releases/download/v2.12.4/siyuan-2.12.4-linux.tar.gz
-        sha256: c36321793ea30cee5ec68c4e4fb83828f761b4f55562df7f51a9b3f79f33f380
+        url: https://github.com/siyuan-note/siyuan/releases/download/v2.12.5/siyuan-2.12.5-linux.tar.gz
+        sha256: 3ad34e26766b43d4d678a5592ffd777dd04841c2ced9f8eb35bb6ed7f9cc9617
         x-checker-data:
           is-main-source: true
           type: anitya
