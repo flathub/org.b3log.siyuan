@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=SiYuan
 Comment=A privacy-first personal knowledge management system that supports complete offline use, as well as end-to-end encrypted data sync
-Exec=start-siyuan %u
+Exec=start-siyuan.sh %u
 Icon=org.b3log.siyuan
 StartupWMClass=SiYuan
 Type=Application
