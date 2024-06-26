@@ -13,6 +13,7 @@ finish-args:
   - --share=network
   - --socket=wayland
   - --socket=x11
+  - --sockets=system-bus
   - --talk-name=org.kde.StatusNotifierWatcher
 modules:
   - name: siyuan
