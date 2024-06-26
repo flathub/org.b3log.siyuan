@@ -15,6 +15,7 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
     EXTRA_ARGS+=(
         --ozone-platform-hint=auto
         --enable-features=UseOzonePlatform,WaylandWindowDecorations
+	    --enable-wayland-ime
     )
     if [[ -c /dev/nvidia0 ]]; then
         echo "Debug: Detecting Nvidia GPU. disabling GPU sandbox."
