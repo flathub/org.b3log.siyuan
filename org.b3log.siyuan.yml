@@ -4,13 +4,15 @@ runtime-version: &runtime-version '23.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
 base-version: *runtime-version
-command: start-siyuan
+command: start-siyuan.sh
 finish-args:
   - --device=dri
+  - --filesystem=home
+  - --filesystem=~/.local/share/fonts:ro
   - --share=ipc
   - --share=network
   - --socket=wayland
-  - --socket=x11
+  - --socket=fallback-x11
   - --talk-name=org.kde.StatusNotifierWatcher
 modules:
   - name: siyuan
@@ -32,6 +34,7 @@ modules:
       - install -Dm644 "${FLATPAK_DEST}/siyuan/resources/stage/icon-large.png" "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
       - install -Dm644 org.b3log.siyuan.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 org.b3log.siyuan.metainfo.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - install -Dm755 start-siyuan.sh /app/bin/start-siyuan.sh
     sources:
       - type: archive
         dest: siyuan
@@ -48,20 +51,5 @@ modules:
         path: org.b3log.siyuan.desktop
       - type: file
         path: org.b3log.siyuan.metainfo.xml
-
-  - name: start-script
-    buildsystem: simple
-    build-commands:
-      # Install the wrapper script to start it.
-      - install -Dm 755 start-siyuan.sh /app/bin/start-siyuan
-    sources:
-      - type: script
-        dest-filename: start-siyuan.sh
-        commands:
-          - set -oue pipefail
-
-          - export FLATPAK_ID="${FLATPAK_ID:-org.b3log.siyuan}"
-          - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
-
-          - zypak-wrapper /app/siyuan/siyuan --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations,Vulkan
-            --gtk-version=4 $@
+      - type: file
+        path: start-siyuan.sh
