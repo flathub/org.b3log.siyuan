@@ -7,7 +7,10 @@ base-version: *runtime-version
 command: start-siyuan.sh
 finish-args:
   - --device=dri
-  - --filesystem=home
+  - --filesystem=~/SiYuan
+  - --filesystem=~/.config/siyuan
+  - --filesystem=~/.config/SiYuan
+  - --filesystem=~/.config/SiYuan-Electron
   - --share=ipc
   - --share=network
   - --socket=x11
