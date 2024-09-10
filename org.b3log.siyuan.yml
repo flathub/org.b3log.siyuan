@@ -37,8 +37,8 @@ modules:
       - type: archive
         dest: siyuan
         only-arches: [x86_64]
-        url: https://github.com/siyuan-note/siyuan/releases/download/v3.1.0/siyuan-3.1.0-linux.tar.gz
-        sha256: 0d470ec9dbdc24d406ad965d436158ddd4b702a80a8e4fb2db50aab24e73bba1
+        url: https://github.com/siyuan-note/siyuan/releases/download/v3.1.6/siyuan-3.1.6-linux.tar.gz
+        sha256: 95ab3f644f761c8f3b9a9e4f64c5790491d138c6a3e8136b9eb1ed4e7cb50268
         x-checker-data:
           is-main-source: true
           type: anitya
