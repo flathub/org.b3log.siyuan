@@ -24,13 +24,14 @@ finish-args:
   - --share=network
   - --socket=x11
   - --talk-name=org.kde.StatusNotifierWatcher
+  # To fix cursor scaling on wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 modules:
   - name: siyuan
     buildsystem: simple
     build-commands:
       - mv "siyuan" ${FLATPAK_DEST}/siyuan
       - rm ${FLATPAK_DEST}/siyuan/chrome-sandbox
-
       # To allow separate locales
       # https://searchfox.org/mozilla-central/rev/8a4f55bc09ffc5c25dcb4586c51ae4a9fee77b4c/taskcluster/docker/firefox-flatpak/runme.sh#131-133
       - |
@@ -40,7 +41,6 @@ modules:
           install -Dm644 -t "${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/" "$lang"
           ln -sf "${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/$(basename $lang)" "${FLATPAK_DEST}/siyuan/locales/$(basename $lang)"
         done
-
       - install -Dm644 "${FLATPAK_DEST}/siyuan/resources/stage/icon-large.png" "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
       - install -Dm644 org.b3log.siyuan.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 org.b3log.siyuan.metainfo.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml
