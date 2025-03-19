@@ -50,7 +50,7 @@ modules:
         dest: siyuan
         only-arches: [x86_64]
         url: https://github.com/siyuan-note/siyuan/releases/download/v3.1.25/siyuan-3.1.25-linux.tar.gz
-        sha256: cfe12241bddecfc1759d9478eb7bd698fadbecc28c08a239d966b6c7f040ec3b
+        sha256: 1a5d5d2a71ef27f2c09d1d726c70834c5598ab5397ed8b53775fee6d9038a2fa
         x-checker-data:
           is-main-source: true
           type: anitya
