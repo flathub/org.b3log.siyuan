@@ -5,6 +5,6 @@ Exec=start-siyuan.sh %u
 Icon=org.b3log.siyuan
 StartupWMClass=SiYuan
 Type=Application
-Categories=Office;
+Categories=Utility;TextTools;Office;WordProcessor;Spreadsheet;TextEditor;
 X-GNOME-SingleWindow=true
 X-SingleMainWindow=true
