@@ -22,7 +22,8 @@ finish-args:
   - --filesystem=xdg-documents
   - --share=ipc
   - --share=network
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --talk-name=org.kde.StatusNotifierWatcher
   # To fix cursor scaling on wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
