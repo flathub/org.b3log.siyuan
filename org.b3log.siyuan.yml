@@ -58,6 +58,16 @@ modules:
           project-id: 358424
           url-template: https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-linux.tar.gz
           stable-only: true
+      - type: archive
+        dest: siyuan
+        only-arches: [aarch64]
+        url: https://github.com/siyuan-note/siyuan/releases/download/v3.8.3/siyuan-3.8.3-linux-arm64.tar.gz
+        sha256: a83fb31d743630b29a53f62da83bb55406525687933c50ec6928adc2e1835931
+        x-checker-data:
+          type: anitya
+          project-id: 358424
+          url-template: https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-linux-arm64.tar.gz
+          stable-only: true
       - type: file
         path: org.b3log.siyuan.desktop
       - type: file
