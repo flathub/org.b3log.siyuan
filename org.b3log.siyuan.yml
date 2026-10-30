@@ -50,23 +50,27 @@ modules:
       - type: archive
         dest: siyuan
         only-arches: [x86_64]
-        url: https://github.com/siyuan-note/siyuan/releases/download/v3.8.8/siyuan-3.8.8-linux.tar.gz
-        sha256: 499516eac85cd711a6b1406f075ffa82d640a6a9a55734bebb0c3d3cb6d95247
+        url: 
+          https://github.com/siyuan-note/siyuan/releases/download/v3.8.9/siyuan-3.8.9-linux.tar.gz
+        sha256: 6a1e77cfb3bd68ff42ffb7b41eaffba279fa51c4cfbf0b6aa2b68c5a1f380bcf
         x-checker-data:
           is-main-source: true
           type: anitya
           project-id: 358424
-          url-template: https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-linux.tar.gz
+          url-template: 
+            https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-linux.tar.gz
           stable-only: true
       - type: archive
         dest: siyuan
         only-arches: [aarch64]
-        url: https://github.com/siyuan-note/siyuan/releases/download/v3.8.8/siyuan-3.8.8-linux-arm64.tar.gz
-        sha256: 2ac2bd147429425289810d941e52d787e53fbd58fa46e0e20dffc8c5732720f5
+        url: 
+          https://github.com/siyuan-note/siyuan/releases/download/v3.8.9/siyuan-3.8.9-linux-arm64.tar.gz
+        sha256: 2364db31ed9f7bfc24ad9b77c86d7603167941a4f5632adec97e5b90c080f3ea
         x-checker-data:
           type: anitya
           project-id: 358424
-          url-template: https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-linux-arm64.tar.gz
+          url-template: 
+            https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-linux-arm64.tar.gz
           stable-only: true
       - type: file
         path: org.b3log.siyuan.desktop
